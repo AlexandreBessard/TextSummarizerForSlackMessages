@@ -1,4 +1,4 @@
-package org.example;
+package org.example.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -8,27 +8,27 @@ import java.util.List;
 
 public class Chat {
     @JsonProperty("model")
-    private String model;
+    public String model;
 
     @JsonProperty("messages")
-    private List<Message> messages;
+    public List<Message> messages;
 
     @JsonProperty("temperature")
-    private float temperature;
+    public float temperature;
 
     @JsonProperty("max_tokens")
-    private int max_tokens;
+    public int max_tokens;
 
     @JsonProperty("top_p")
-    private float top_p;
+    public float top_p;
 
     @JsonProperty("frequency_penalty")
-    private int frequency_penalty;
+    public int frequency_penalty;
 
     @JsonProperty("presence_penalty")
-    private int presence_penalty;
+    public int presence_penalty;
 
-    private Chat(ChatBuilder builder) {
+    public Chat(ChatBuilder builder) {
         // Required
         this.model = builder.model;
         // Required
@@ -56,7 +56,7 @@ public class Chat {
         private int frequency_penalty = 0;
         private int presence_penalty = 0;
 
-        private ChatBuilder() {}
+        public ChatBuilder() {}
 
         public ChatBuilder model(String model) {
             this.model = model;
